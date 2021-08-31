@@ -1,11 +1,11 @@
-### Server Monitoring Metrics
+# Server Monitoring Metrics
 
 The server is used for SSL offloading and proxies around 25000 requests per second, 
 as the server involves in SSL offloading operation so it uses CPU cycles, in this
 case we need to monitor CPU and I/O of the server.
 Below are some metrics in linux which will help to understand it.
 
-# mpstat
+## mpstat
 
 mpstat is a command that is used to report processor related statistics. 
 It accurately displays the statistics of the CPU usage of the system. 
@@ -13,7 +13,7 @@ It displays information about CPU utilization and performance.
 It initializes the first processor with CPU 0, the second one with CPU 1, and so on,
 and from the output of this command we need to check the values of **%sys** and **%iowait**.
 **%sys** shows how much CPU is utilizing.
-**%iowait** iowait shows the percentage of time that the CPU or CPUs were idle during
+**%iowait** shows the percentage of time that the CPU or CPUs were idle during
 which the system had an outstanding disk I/O request.
 To display CPU utilization for all the cores,
 ```
@@ -38,7 +38,7 @@ sample output
 11:14:23     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
 11:14:23       0   14.45    0.00   10.53    0.09    0.00    0.56    0.00    0.00    0.00   74.36
 ```
-# sar
+## sar
 
 sar is used to track the activities performed in a computer system in real time.
 It shows the almost similar results as mpstat but in real time.
@@ -53,7 +53,7 @@ sample output
 11:16:48        all     28.25      0.00     16.21      0.05      0.00     55.49
 11:16:53        all     20.23      0.00     12.90      0.05      0.00     66.82
 ```
-# iostat
+## iostat
 
 The iostat command without arguments, it will display information about CPU usage, 
 and I/O statistics for every partition on the system.
